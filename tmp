@@ -1,0 +1,82 @@
+//     private static void insertMillionRecords(MySqlConnection sqlConnection)
+    //     {
+    //         var sw = new Stopwatch();
+    //         sw.Start();
+    //         DataTable dt = new DataTable();
+    //         dt.Columns.Add("password");
+    //         Console.WriteLine("for loop Started.");
+    //         for (long i = 1; i < 30000000; i++)
+    //         {
+    //             DataRow dr = dt.NewRow();
+    //             dr["password"] = giveDigit(i.ToString());
+    //             dt.Rows.Add(dr);
+    //         }
+    //         Console.WriteLine("for loop completed.");
+
+    //         using (MySqlTransaction tran = sqlConnection.BeginTransaction(IsolationLevel.Serializable))
+    //         {
+    //             using (MySqlCommand cmd = new MySqlCommand())
+    //             {
+    //                 cmd.Connection = sqlConnection;
+    //                 cmd.Transaction = tran;
+    //                 cmd.CommandText = $"SELECT * FROM " + "passworddetail" + " limit 0";
+
+    //                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+    //                 {
+    //                     adapter.UpdateBatchSize = 10000;
+    //                     using (MySqlCommandBuilder cb = new MySqlCommandBuilder(adapter))
+    //                     {
+    //                         cb.SetAllValues = true;
+    //                         adapter.Update(dt);
+    //                         tran.Commit();
+    //                     }
+    //                 };
+    //             }
+    //         }
+    //         sw.Stop();
+    //         Console.WriteLine($"Total time: {sw.ElapsedMilliseconds}");
+    //     }
+
+    //     static string giveDigit(string str)
+    //     {
+
+    //         long digit = long.Parse(str);
+    //         string result = "";
+    //         switch (str.Length)
+    //         {
+    //             case 0:
+    //                 result = "000000000";
+    //                 break;
+    //             case 1:
+    //                 result = "00000000" + digit.ToString();
+    //                 break;
+    //             case 2:
+    //                 result = "0000000" + digit.ToString();
+    //                 break;
+    //             case 3:
+    //                 result = "000000" + digit.ToString();
+    //                 break;
+    //             case 4:
+    //                 result = "00000" + digit.ToString();
+    //                 break;
+    //             case 5:
+    //                 result = "0000" + digit.ToString();
+    //                 break;
+    //             case 6:
+    //                 result = "000" + digit.ToString();
+    //                 break;
+    //             case 7:
+    //                 result = "00" + digit.ToString();
+    //                 break;
+    //             case 8:
+    //                 result = "0" + digit.ToString();
+    //                 break;
+    //             case 9:
+    //                 result = "" + digit.ToString();
+    //                 break;
+    //             default:
+    //                 Console.WriteLine("please enter valid int");
+    //                 break;
+    //         }
+    //         return "AsDjwkajXo@" + result;
+    //     }
